@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+
+        <meta charset="UTF-8">  
+        <title>Update Trainer</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+
+    </head>  
+    <body>  
+       
+        <h2>Update a Trainer</h2>
+        <br>
+        {{plot_div|safe}}
+        <br>
+        <br>
+        <br>
+        <form method="POST" class="post-form"> 
+
+            {% csrf_token %}  
+            <label for="id">Trainer ID </label>
+            <input id="id" style="background-color: #a3c2c2b9;" type="text" name="id" value="{{ t_id}}"> 
+             
+            <label for="name">Trainer Name: </label>
+            <input id="name" style="background-color: #a3c2c2b9;" type="text" name="name" value="{{ t_name }}"> 
+            <label for="Address">Trainer Address: </label>
+            <input id="Address" type="text" name="Address" value="{{ t_Address }}">          
+            <label for="phno">Phone Number: </label>
+            <input id="phno" type="text" name="phno" value="{{ t_phno }}" style="margin-right: 10%;">
+            <label for="hours">Working Hours: </label>
+            <input id="hours" type="text" name="hours" value="{{ t_hours }}">
+            
+            <button type="submit" class="save btn btn-default" name="update">Submit</button>    
+        </form>
+        <br>
+        <br>
+        <div class="home">
+            <a href="/" class="classname"style='margin-right:96px'>Home</a>
+        </div> 
+    </body>  
+</html>  

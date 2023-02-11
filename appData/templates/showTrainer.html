@@ -1,0 +1,35 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+
+        <meta charset="UTF-8">  
+        <title>Show Trainers</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+
+    </head>  
+    <body><br>
+        <h2>List of Trainers:</h2>
+        <br>
+        <form method="POST" id="post-form">  
+            {% csrf_token %} 
+            <div>
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="name">
+            </div>
+            <div>
+                <label for="gym">Gym Name: </label>
+                <input id="gym" type="text" name="gym">
+            </div>
+             
+            <button type="submit" class="save btn btn-default">Submit</button>
+        </form>  
+        <br>
+        
+        {{plot_div|safe}}
+        <br>
+        <br>
+        <div class="home">
+            <a href="/" class="classname"style='margin-right:96px'>Home</a>
+        </div> 
+</html> 

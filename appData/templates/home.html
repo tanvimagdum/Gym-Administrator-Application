@@ -1,0 +1,30 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+        <meta charset="UTF-8">  
+        <title>Home</title>  
+  
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+    </head>  
+    <body>
+        <h1>GYM MANAGEMENT SYSTEM</h1>
+        <br>
+        <H2>Please Select your Task</H2>
+        <br>
+        <br>
+        <br>
+        <div class ="home">
+            <a href="/memberAndTrainer" class="classname" style='margin-right:96px'>Member and Trainer</a>
+            <a href="/equipmentAndCleaner" class="classname" style='margin-right:96px'>Equipment and Cleaner</a>
+            <a href="/activityRoomAndGym" class="classname" style='margin-right:96px'>Activity, Room and Gym</a>
+
+
+
+
+           <h5>{{ error }}</h5>
+        </div>
+    </body>  
+</html> 

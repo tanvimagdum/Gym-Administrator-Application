@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+
+        <meta charset="UTF-8">  
+        <title>Add Member and Activtiy</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+
+    </head>  
+    <body>  
+        <h2>Add a Member and Activtiy</h2>
+        <br>
+    <form method="POST"id="member_to_activity" class="post-form"data-memberActivity-url="{% url 'ajax_load_activities' %}">  
+            {% csrf_token %}  
+            {{ form.as_p }}  
+            <button type="submit" class="save btn btn-default">Submit</button>  
+        </form> 
+        <br>
+        <br>
+        <br>
+        <div class="home">
+            <a href="/" class="classname"style='margin-right:96px'>Home</a>
+        </div>
+    </body>  
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#id_member").change(function () {
+      var url = $("#member_to_activity").attr("data-memberActivity-url");  // get the url of the `load_cities` view
+      var memberId = $(this).val();  // get the selected country ID from the HTML input
+      
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'members': memberId       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#id_activity").html(data);  // replace the contents of the city input with the data that came from the server
+        }
+      });
+
+    });
+  </script>
+</html>  

@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+
+        <meta charset="UTF-8">  
+        <title>Update Member</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+
+    </head>  
+    <body>  
+        <h2>Update a Member</h2>
+        <br>
+        {{plot_div|safe}}
+        <br>
+        <br>
+        <form method="POST" class="post-form">  
+
+            {% csrf_token %}   
+            <label for="id">Member ID: </label>
+            <input id="id" style="background-color: #a3c2c2b9;" type="text" name="id" value="{{ m_id }}">
+            <label for="name">Member Name: </label>
+            <input id="name" style="background-color: #a3c2c2b9;" type="text" name="name" value="{{ m_name }}">  
+            <label for="dob">Member Date of Birth: </label>
+            <input id="dob" type="text" name="dob" value="{{ m_dob }}">          
+            <label for="phno">Phone Number: </label>
+            <input id="phno" type="text" name="phno" value="{{ m_phno }}" style="margin-right: 10%;">
+            <label for="Weight">Weight: </label>
+            <input id="Weight" type="text" name="Weight" value="{{ m_weight }}" style="margin-right: 10%;">
+            <label for="Height">Height: </label>
+            <input id="Height" type="text" name="Height" value="{{ m_Height }}">
+            
+            <button type="submit" class="save btn btn-default" name="update">Submit</button>    
+        </form>
+        <br>
+        <br>
+        <div class="home">
+            <a href="/" class="classname"style='margin-right:96px'>Home</a>
+        </div> 
+    </body>  
+</html>  

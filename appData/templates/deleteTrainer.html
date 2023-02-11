@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head> 
+      {% load static %}
+ 
+        <meta charset="UTF-8">  
+        <title>Delete Trainer</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+        <style>.myDiv {
+          border: 5px outset rgb(41, 35, 35);
+          background-color: blueviolet;
+          text-align: center;
+        }</style>
+    </head>  
+    <body>
+       <h2> ID of Trainer you want to delete</h2>
+       <br>
+        <form method="POST" class="post-form">  
+          {% csrf_token %}  
+          <label for="name">ID of Trainer: </label>
+          
+          <input id="id" type="text" name="id">
+         <button type="submit" class="save btn btn-default">Submit</button>
+      </form>  
+      <h2>List Of Trainer</h2>
+      <div class="myDiv">{{plot_div|safe}}</div> 
+      <br>
+      <br>
+      <div class="home">
+        <a href="/" class="classname"style='margin-right:96px'>Home</a>
+    </div>
+    </body>  
+</html> 

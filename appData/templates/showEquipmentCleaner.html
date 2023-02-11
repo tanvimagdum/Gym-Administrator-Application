@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>  
+        {% load static %}
+
+        <meta charset="UTF-8">  
+        <title>Show Equipment Cleaner</title>  
+        <link rel="stylesheet" href="{%static 'css/styles.css' %}" type="text/css">
+
+    </head>  
+    <body><br>
+        <h2>List of Equipment Cleaner:</h2>
+        <br>
+        <form method="POST" id="post-form">  
+            {% csrf_token %} 
+           
+            <div>
+                <label for="name">Cleaner Name: </label>
+                <input id="name" type="text" name="name">
+            </div>
+             
+            <button type="submit" class="save btn btn-default">Submit</button>
+        </form>  
+        <br>
+        
+        {{plot_div|safe}}
+        <br>
+        <br>
+        <div class="home">
+            <a href="/" class="classname"style='margin-right:96px'>Home</a>
+        </div> 
+</html> 
